@@ -10,5 +10,7 @@ namespace ToDo.Models
         public int CategoryID { get; set; }
         public string Name { get; set; }
         public string Priority { get; set; }
+
+        public List<Task> Tasks { get; set; }
     }
 }

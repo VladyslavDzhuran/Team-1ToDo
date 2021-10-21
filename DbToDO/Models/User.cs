@@ -9,5 +9,7 @@ namespace ToDo.Models
     {
         public int UsedId { get; set; }
         public string Name { get; set; }
+
+        public List<Task> Tasks { get; set; }
     }
 }
