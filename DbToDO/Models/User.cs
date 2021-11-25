@@ -7,7 +7,9 @@ namespace ToDo.Models
 {
     public class User
     {
-        public int UsedId { get; set; }
+        public int UserId { get; set; }
         public string Name { get; set; }
+
+        public List<TaskItem> Tasks { get; set; }
     }
 }

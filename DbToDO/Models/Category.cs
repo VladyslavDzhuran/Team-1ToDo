@@ -5,10 +5,18 @@ using System.Threading.Tasks;
 
 namespace ToDo.Models
 {
-    public class Category
+    public enum CategorySelector
     {
-        public int CategoryID { get; set; }
-        public string Name { get; set; }
-        public string Priority { get; set; }
+        Work,
+        Home,
+        Study,
+        SadGorod
+    }
+    public enum PrioritySelector
+    {
+        Critical,
+        Important,
+        Medium,
+        Low
     }
 }
