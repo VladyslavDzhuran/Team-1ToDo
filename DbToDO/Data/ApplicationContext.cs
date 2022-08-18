@@ -1,17 +1,15 @@
-﻿using DbToDo.Data;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using ToDo.Models;
 
-namespace DbToDo
+namespace ToDo
 {
-    class ApplicationContext : DbContext
+    public class ApplicationContext : DbContext
     {
         public DbSet<User> Users { get; set; }
-        public DbSet<Category> Categories { get; set; }
-        public DbSet<Task> Tasks { get; set; }
+        public DbSet<TaskItem> Tasks { get; set; }
 
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {
@@ -20,8 +18,13 @@ namespace DbToDo
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new CategoryConfiguration());
-            modelBuilder.ApplyConfiguration(new UserConfiguration());
+            modelBuilder.Entity<User>().HasData(
+            new User[]
+            {
+                new User { UserId=1, Name="Vladyslav"},
+                new User { UserId=2, Name="Nazar"},
+                new User { UserId=3, Name="Volodymyr"},
+            });
         }
     }
 }

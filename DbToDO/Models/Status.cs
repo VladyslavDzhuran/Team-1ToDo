@@ -10,7 +10,6 @@ namespace ToDo.Models
         Inprogress,
         Done,
         NotStarted
-
     }
 }
 
